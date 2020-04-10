@@ -1,10 +1,9 @@
 # webcam
 
-Projet de reconnaissance automatique de caractère à partie d'une webcam.
+Un algorithme de reconnaissance de caractère d'une station météo à partir d'une webcam sur Matlab, sous license MIT
 
-Tester la modification d'un fichier
+## Lancement de l'application 
 
-Test 2
+Sur Matlab, clique droit dans le folder, puis get source control, choisir git et rentrer ce lien : https://github.com/AlexDum-dev/webcam.git
 
 
-TEST Alex
