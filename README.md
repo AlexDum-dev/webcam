@@ -1,6 +1,6 @@
 # webcam
 
-Un algorithme de reconnaissance de caractère d'une station météo à partir d'une webcam sur Matlab, sous license MIT
+Un algorithme de reconnaissance de caractère d'une station météo à partir d'une webcam sur Matlab, sous license MIT.
 
 ## Lancement de l'application 
 
