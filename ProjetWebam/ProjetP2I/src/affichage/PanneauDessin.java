@@ -61,9 +61,9 @@ public class PanneauDessin extends JPanel{
 	public void affichageValeurs(Graphics g) {
 	    g.setFont(f2);
 		g.drawString(""+Global.valeurJour+"/"+Global.valeurMois+"/"+Global.valeurAnnee+ ":"+Global.valeurHeure+" H", Global.positionValeurDate.x, Global.positionValeurDate.y); 
-		g.drawString(""+Global.valeurTemperature+"         °C",Global.positionValeurTemperature.x,Global.positionValeurTemperature.y); 
-		g.drawString(""+Global.valeurVent+"         km/h",Global.positionValeurVent.x,Global.positionValeurVent.y); 
-		g.drawString(""+Global.valeurHumidite+"         %",Global.positionValeurHumidite.x,Global.positionValeurHumidite.y); 
+		g.drawString(""+Global.valeurTemperature+"       C",Global.positionValeurTemperature.x,Global.positionValeurTemperature.y); 
+		g.drawString(""+Global.valeurVent+"       km/h",Global.positionValeurVent.x,Global.positionValeurVent.y); 
+		g.drawString(""+Global.valeurHumidite+"       %",Global.positionValeurHumidite.x,Global.positionValeurHumidite.y); 
 		
 	}
 }

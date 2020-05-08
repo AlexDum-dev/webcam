@@ -32,18 +32,18 @@ public class Global {
 	
 	public static CoordonneePoint positionValeurDate = new CoordonneePoint(positionDate.x + espacementXAvecLesValeurs,positionDate.y + espacementYAvecLesValeurs);
 	
-	public static String valeurJour = "06";
-	public static String valeurMois = "05";
-	public static String valeurAnnee = "2020";
-	public static String valeurHeure = "10";
+	public static int valeurJour = 06;
+	public static int valeurMois = 05;
+	public static int valeurAnnee = 2020;
+	public static int valeurHeure = 10;
 	
 	
 	
 	public static CoordonneePoint positionTemperature = new CoordonneePoint(positionDate.x,positionDate.y + espacementEntreTexte);
 	
 	public static CoordonneePoint positionValeurTemperature = new CoordonneePoint(positionTemperature.x + espacementXAvecLesValeurs,positionTemperature.y + espacementYAvecLesValeurs);
-	
-	public static String valeurTemperature = "10";
+
+	public static double valeurTemperature = 10;
 	
 	
 	
@@ -51,7 +51,7 @@ public class Global {
 
 	public static CoordonneePoint positionValeurVent = new CoordonneePoint(positionVent.x + espacementXAvecLesValeurs,positionVent.y + espacementYAvecLesValeurs);
 	
-	public static String valeurVent = "10";
+	public static double valeurVent = 10;
 	
 	
 
@@ -59,7 +59,7 @@ public class Global {
 	
 	public static CoordonneePoint positionValeurHumidite = new CoordonneePoint(positionHumidite.x + espacementXAvecLesValeurs,positionHumidite.y + espacementYAvecLesValeurs);
 
-	public static String valeurHumidite = "20";
+	public static double valeurHumidite = 20;
 	
 	
 	
@@ -78,6 +78,15 @@ public class Global {
 	public static CoordonneePoint[] tabCoordonnee = new CoordonneePoint[4];
 	public static Image[] tabImage = new Image[4];
 	
+	
+	
+	public static double tempsActuel = System.currentTimeMillis();
+	public static double tempsPrecedent = 0;
+	
+	public static double[] tabHeure;
+	public static double[] tabTemperature;
+	public static double[] tabVent;
+	public static double[] tabHumidite;
 	
 	public static void importerImages() {
 	try {
