@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class LectureFichierTexte {
 	private static String cheminFichier;
 	
-	public static double[] InitialisationTableau(String nomFichier){
-		double tabFichier[] = new double[24];
+	public static String[] InitialisationTableau(String nomFichier){
+		String tabFichier[] = new String[24];
 		cheminFichier = "src/affichage/fichierTexte/"+nomFichier+".txt";
 		Scanner sc = null;
 		int i = 0;
@@ -16,7 +16,7 @@ public class LectureFichierTexte {
             try {
                 sc = new Scanner(new File(cheminFichier));
                 while (sc.hasNextLine()) {
-                	tabFichier[i] = Double.parseDouble(sc.nextLine());
+                	tabFichier[i] = sc.nextLine();
                 	i++;
                 }
             } 

@@ -15,6 +15,7 @@ public class Fenetre extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    
         this.setAlwaysOnTop(true);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setUndecorated(true);
 		creationJPanel();
 		this.setVisible(true);
 		miseAJourValeur();
@@ -33,10 +34,10 @@ public class Fenetre extends JFrame{
 		
 		Global.tempsPrecedent = Global.tempsActuel;
 		int compteur = 0;
-		while(compteur <= 10) {
+		while(compteur <= 23) {
 			Global.tempsActuel = System.currentTimeMillis();
 			if(Global.tempsActuel - Global.tempsPrecedent >= 10000) {
-				Global.valeurHeure = (int) Global.tabHeure[compteur];
+				Global.valeurHeure =  Global.tabHeure[compteur];
 				Global.valeurTemperature = Global.tabTemperature[compteur];
 				Global.valeurVent = Global.tabVent[compteur];
 				Global.valeurHumidite = Global.tabHumidite[compteur];
