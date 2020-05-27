@@ -16,6 +16,6 @@ for i = 1:ligne                                                             % On
 end
 boxPixel = ordonneBoxPixel(boxPixel);                                       % On met les characteres dans l'ordre si ils ne le sont pas ( problème lié à la difference de hauteur entre les characteres)
 boxPixel = ajustementBoxPixel(boxPixel,ImageTraite);                             % On ajuste les zones séléctionnés pour récuperer un seul charactere à la fois (obligatoire pour le chiffre 1 et 4)
-charactereVoulu = ImageTraite(boxPixel(numeroDuCharactere,2):boxPixel(numeroDuCharactere,2)+tailleBox(2)-1,boxPixel(numeroDuCharactere,1):boxPixel(numeroDuCharactere,1)+tailleBox(1)-1);   % On découpe l'image pour obtenir le charactere voulu
+charactereVoulu = ImageTraite(boxPixel(numeroDuCharactere,2):boxPixel(numeroDuCharactere,2)+tailleBox(2)-2,boxPixel(numeroDuCharactere,1):boxPixel(numeroDuCharactere,1)+tailleBox(1)-1);   % On découpe l'image pour obtenir le charactere voulu
 
 end
