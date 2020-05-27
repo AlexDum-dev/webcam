@@ -7,5 +7,5 @@ for n = 1:8
 
 end
 
-% On verifie si le pixel selectionné fait déja partie ou non de boxPixel.
+% On verifie si le pixel selectionné fait déja parti ou non de boxPixel.
 % Permet de définir boxPixel avec 1 seule pixel, celui dans le coin en haut à gauche
