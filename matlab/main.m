@@ -11,43 +11,33 @@ a8=double(imcomplement(imread('chiffre7.png')));
 a9=double(imcomplement(imread('chiffre8.png')));
 a10=double(imcomplement(imread('chiffre9.png')));
 chiffres=remplissage(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10);
-% b1=imread('CaptureEcran.png');
-% corr(i)=max(max(xcorr2(b1(:,:,1),chiffres(:,:,1))));
-% max(corr)
-%image = imcrop(binarize(imread('Ressources/test.png')));
-%deux = retourneImageCharactere(image, 3);
-%max = retourneMaxStructure(chiffres,image);
-%corr1 = normxcorr2(image, chiffres(:,:,5));
-%figure(1);
-%imshow(image);
-%% Corrélation : 
+images = remplissage2();
+images_traited = images;
+im = images_traited(:,:,5);
+disp(sum(sum(im)));
+%% DÃ©tection
+mat_resultats =zeros(24,4);
+j = 1;
+for i=1:1:24
+    images_traited(:,:,i) = retourneImageTraite(images(:,:,i));
+    j=1;
+    for n=1:1:8
+        character = retourneCharactereAuto(images_traited(:,:,i), n);
+        [chiffre,corr,structure_corr] = retourneMaxStructure(chiffres, character);
+        if mod(n,2) ~= 0
+            premier_chiffre = chiffre;
+        else
+            second_chiffre = chiffre;
+            mat_resultats(i,j)  = premier_chiffre + 10*second_chiffre;
+            j = j+1;
+        end
+    end
+end        
+
+
+
+%% Corrï¿½lation : 
 image = imread('screen2.png');
 image_bin = binarize(image);
 character = retourneImageCharactere(image_bin, 2);
-[chiffre, tab_max,structure_corr] = retourneMaxStructure(chiffres,character); 
-
-
-figure(1);
-subplot(2,1,1);
-imagesc(character)
-imshow('chiffre0.png')
-subplot(2,1,2);
-title('Max de la sortie de la matrice de corrélation pour chaque chiffre (décalés de 1)');
-stem(tab_max);
-
-figure(2);
-surf(structure_corr(:,:,10));
-shading flat
-title('Visualisation 3D de la matrice de corrélation d"un 7 avec le 9 de référence');
-
-figure(3);
-imshow(structure_corr(:,:,10));
-
-figure(4);
-title('Chiffre 7 extrait de notre image de la station météo');
-subplot(2,2,1);
-imshow(character);
-subplot(2,2,2);
-title('Imagette de référence du chiffre 9');
-imshow(chiffres(:,:,10));
-alpha=compare(chiffres(:,:,10),character);
+[chiffre, tab_max,structure_corr] = retourneMaxStructure(chiffres,character);
