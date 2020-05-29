@@ -1,13 +1,14 @@
-a1=double(imcomplement(imread('Ressources/chiffre/chiffre0.png')));
-a2=double(imcomplement(imread('Ressources/chiffre/chiffre1.png')));
-a3=double(imcomplement(imread('Ressources/chiffre/chiffre2.png')));
-a4=double(imcomplement(imread('Ressources/chiffre/chiffre3.png')));
-a5=double(imcomplement(imread('Ressources/chiffre/chiffre4.png')));
-a6=double(imcomplement(imread('Ressources/chiffre/chiffre5.png')));
-a7=double(imcomplement(imread('Ressources/chiffre/chiffre6.png')));
-a8=double(imcomplement(imread('Ressources/chiffre/chiffre7.png')));
-a9=double(imcomplement(imread('Ressources/chiffre/chiffre8.png')));
-a10=double(imcomplement(imread('Ressources/chiffre/chiffre9.png')));
+a1=double(imcomplement(imread('chiffre0.png')));
+a2=double(imcomplement(imread('chiffre1.png')));
+a3=double(imcomplement(imread('chiffre2.png')));
+a4=double(imcomplement(imread('chiffre3.png')));
+a5=double(imcomplement(imread('chiffre4.png')));
+a6=double(imcomplement(imread('chiffre5.png')));
+a7=double(imcomplement(imread('chiffre6.png')));
+a8=double(imcomplement(imread('chiffre7.png')));
+a9=double(imcomplement(imread('chiffre8.png')));
+a10=double(imcomplement(imread('chiffre9.png')));
+bin=255*zeros(130,76);
 chiffres=zeros(130,76,10);
 [x1,y1]=size (a1);
 [x2,y2]=size (a2);
@@ -89,7 +90,10 @@ chiffres=zeros(130,76,10);
              chiffres(i,j,10)=a10(i,j);
          end 
    end
-   
+   for i=1:10
+      chiffres(:,:,i)=double(chiffres(:,:,i)==bin);
+     
+   end
 % b1=imread('CaptureEcran.png');
 % corr(i)=max(max(xcorr2(b1(:,:,1),chiffres(:,:,1))));
 % max(corr)
@@ -99,8 +103,8 @@ chiffres=zeros(130,76,10);
 %corr1 = normxcorr2(image, chiffres(:,:,5));
 %figure(1);
 %imshow(image);
-%% CorrÃ©lation : 
-image = imread('Ressources/screen/screen2.png');
+%% Corrélation : 
+image = imread('screen2.png');
 image_bin = binarize(image);
 character = retourneImageCharactere(image_bin, 2);
 [chiffre, tab_max,structure_corr] = retourneMaxStructure(chiffres,character); 
@@ -108,23 +112,25 @@ character = retourneImageCharactere(image_bin, 2);
 
 figure(1);
 subplot(2,1,1);
-imshow(character)
+imagesc(character)
+imshow('chiffre0.png')
 subplot(2,1,2);
-title('Max de la sortie de la matrice de corrÃ©lation pour chaque chiffre (dÃ©calÃ©s de 1)');
+title('Max de la sortie de la matrice de corrélation pour chaque chiffre (décalés de 1)');
 stem(tab_max);
 
 figure(2);
 surf(structure_corr(:,:,10));
 shading flat
-title('Visualisation 3D de la matrice de corrÃ©lation d"un 7 avec le 9 de rÃ©fÃ©rence');
+title('Visualisation 3D de la matrice de corrélation d"un 7 avec le 9 de référence');
 
 figure(3);
 imshow(structure_corr(:,:,10));
 
 figure(4);
-title('Chiffre 7 extrait de notre image de la station mÃ©tÃ©o');
+title('Chiffre 7 extrait de notre image de la station météo');
 subplot(2,2,1);
 imshow(character);
 subplot(2,2,2);
-title('Imagette de rÃ©fÃ©rence du chiffre 9');
-imshow(a10);
+title('Imagette de référence du chiffre 9');
+imshow(chiffres(:,:,10));
+alpha=compare(chiffres(:,:,10),character);
