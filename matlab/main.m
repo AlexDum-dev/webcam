@@ -128,3 +128,7 @@ imshow(character);
 subplot(2,2,2);
 title('Imagette de référence du chiffre 9');
 imshow(a10);
+
+figure(5);
+title 
+histogram(rgb2gray(image));
