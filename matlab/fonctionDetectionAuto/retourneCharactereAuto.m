@@ -6,7 +6,7 @@ nbCharactereConnu = 1;                                                      % Pe
 for i = 1:ligne                                                             % On parcourt tous les pixels de l'image 
     for j = 1:colonne
         charactereConnu = verificationDuCharactere(boxPixel,tailleBox,j,i); % On verifie si le pixel selectionné a déja été enregisté ou non
-        if ImageTraite(i,j) == 255 && charactereConnu == false              % Si on a un pixel blanc et non enregistré
+        if ImageTraite(i,j) == 1 && charactereConnu == false              % Si on a un pixel blanc et non enregistré
             boxPixel(nbCharactereConnu,1) = j-7;                            % Alors on ajoute ses coordonnées à boxPixel (on le fait seulement pour le 1er pixel du charactere, pour les autres, ils sont considérées comme enregistrés)
             boxPixel(nbCharactereConnu,2) = i;
             nbCharactereConnu = nbCharactereConnu+1;
