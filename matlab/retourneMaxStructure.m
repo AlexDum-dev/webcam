@@ -5,10 +5,8 @@ max_corr = zeros(1,10);
 structure_corr  = zeros(259,151,10);
 
 for n=1:1:10 
-    %corrélation :
-    %corr = normxcorr2(image_chiffre, structure_chiffre(:,:,n)); %
-    %Similarité : 
-    corr = compare(image_chiffre, structure_chiffre(:,:,n));
+    %Corrélation :
+    corr = normxcorr2(image_chiffre, structure_chiffre(:,:,n)); 
     structure_corr(:,:,n) = corr;
     max_corr(n) = max(max(corr));
 end
