@@ -1,3 +1,5 @@
+%% Fonction qui fait la corrélation et retourne le chiffre détecté ainsi que les max des indices de similarité : 
+
 function [chiffre, max_corr,structure_corr] = retourneMaxStructure(structure_chiffre, image_chiffre)
 
 %% Boucle for faisant l'opération  de corrélation : 
@@ -10,8 +12,6 @@ for n=1:1:10
     structure_corr(:,:,n) = corr;
     max_corr(n) = max(max(corr));
 end
-
-disp(max(max_corr));
 
 for i=1:1:10
     if max_corr(i) == max(max_corr)

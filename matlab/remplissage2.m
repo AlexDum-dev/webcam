@@ -1,28 +1,30 @@
+%% Créer la structure avec les images à analyser : 
+
 function screen = remplissage2()
-a1=double(imcomplement(binarize(imread('screen0.png'))));
-a2=double(imcomplement(binarize(imread('screen1.png'))));
-a3=double(imcomplement(binarize(imread('screen2.png'))));
-a4=double(imcomplement(binarize(imread('screen3.png'))));
-a5=double(imcomplement(binarize(imread('screen4.png'))));
-a6=double(imcomplement(binarize(imread('screen5.png'))));
-a7=double(imcomplement(binarize(imread('screen6.png'))));
-a8=double(imcomplement(binarize(imread('screen7.png'))));
-a9=double(imcomplement(binarize(imread('screen8.png'))));
-a10=double(imcomplement(binarize(imread('screen9.png'))));
-a11=double(imcomplement(binarize(imread('screen10.png'))));
-a12=double(imcomplement(binarize(imread('screen11.png'))));
-a13=double(imcomplement(binarize(imread('screen12.png'))));
-a14=double(imcomplement(binarize(imread('screen13.png'))));
-a15=double(imcomplement(binarize(imread('screen14.png'))));
-a16=double(imcomplement(binarize(imread('screen15.png'))));
-a17=double(imcomplement(binarize(imread('screen16.png'))));
-a18=double(imcomplement(binarize(imread('screen17.png'))));
-a19=double(imcomplement(binarize(imread('screen18.png'))));
-a20=double(imcomplement(binarize(imread('screen19.png'))));
-a21=double(imcomplement(binarize(imread('screen20.png'))));
-a22=double(imcomplement(binarize(imread('screen21.png'))));
-a23=double(imcomplement(binarize(imread('screen22.png'))));
-a24=double(imcomplement(binarize(imread('screen23.png'))));
+a1=double(binarize(imread('screen0.png')));
+a2=double(binarize(imread('screen1.png')));
+a3=double(binarize(imread('screen2.png')));
+a4=double(binarize(imread('screen3.png')));
+a5=double(binarize(imread('screen4.png')));
+a6=double(binarize(imread('screen5.png')));
+a7=double(binarize(imread('screen6.png')));
+a8=double(binarize(imread('screen7.png')));
+a9=double(binarize(imread('screen8.png')));
+a10=double(binarize(imread('screen9.png')));
+a11=double(binarize(imread('screen10.png')));
+a12=double(binarize(imread('screen11.png')));
+a13=double(binarize(imread('screen12.png')));
+a14=double(binarize(imread('screen13.png')));
+a15=double(binarize(imread('screen14.png')));
+a16=double(binarize(imread('screen15.png')));
+a17=double(binarize(imread('screen16.png')));
+a18=double(binarize(imread('screen17.png')));
+a19=double(binarize(imread('screen18.png')));
+a20=double(binarize(imread('screen19.png')));
+a21=double(binarize(imread('screen20.png')));
+a22=double(binarize(imread('screen21.png')));
+a23=double(binarize(imread('screen22.png')));
+a24=double(binarize(imread('screen23.png')));
 
 screen=zeros(1080,1920,24);
 [x1,y1]=size (a1);
@@ -72,60 +74,60 @@ end
 [x16,y16]=size (a16);
     for i=1:x16
          for j=1:y16
-             screen(i,j,16)=a1(i,j);
+             screen(i,j,16)=a16(i,j);
          end 
     end
     [x17,y17]=size (a17);
     for i=1:x17
          for j=1:y17
-             screen(i,j,17)=a1(i,j);
+             screen(i,j,17)=a17(i,j);
          end 
     end
 [x18,y18]=size (a18);
     for i=1:x18
          for j=1:y18
-             screen(i,j,18)=a1(i,j);
+             screen(i,j,18)=a18(i,j);
          end 
     end
 
 [x19,y19]=size (a19);
     for i=1:x19
          for j=1:y19
-             screen(i,j,19)=a1(i,j);
+             screen(i,j,19)=a19(i,j);
          end 
     end
 
 [x20,y20]=size (a20);
     for i=1:x20
          for j=1:y20
-             screen(i,j,20)=a1(i,j);
+             screen(i,j,20)=a20(i,j);
          end 
     end
 
 [x21,y21]=size (a21);
     for i=1:x21
          for j=1:y21
-             screen(i,j,21)=a1(i,j);
+             screen(i,j,21)=a21(i,j);
          end 
     end
 
 [x22,y22]=size (a22);
     for i=1:x22
          for j=1:y22
-             screen(i,j,22)=a1(i,j);
+             screen(i,j,22)=a22(i,j);
          end 
     end
 [x23,y23]=size (a23);
     for i=1:x23
          for j=1:y23
-             screen(i,j,23)=a1(i,j);
+             screen(i,j,23)=a23(i,j);
          end 
     end
 
 [x24,y24]=size (a24);
     for i=1:x24
          for j=1:y24
-             screen(i,j,24)=a1(i,j);
+             screen(i,j,24)=a24(i,j);
          end 
     end
 

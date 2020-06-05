@@ -1,6 +1,7 @@
+%% Retourne chiffre dÃ©tectÃ© (mÃ©thode indice de DICE) et les max : 
 function [chiffre, max_compar] = RetourneStructureCompar(structure_chiffre, image_chiffre)
 
-%% Boucle for faisant l'opération  de corrélation : 
+%% Boucle for faisant l'opï¿½ration  de corrï¿½lation : 
 max_compar = zeros(1,10);
 
 for n=1:1:10  
